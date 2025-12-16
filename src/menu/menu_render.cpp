@@ -82,8 +82,30 @@ void MenuRenderer::drawTimerEditor(uint8_t digit, uint16_t sec)
   d.drawStr(x, y, buf);
 
   // Underline selected digit
-  uint8_t digitX = x + d.getStrWidth(buf) * digit / 5;
-  d.drawHLine(digitX, y + 2, d.getStrWidth("0"));
+  uint8_t digitX = x;
+  uint8_t underlineW = 0;
+  uint8_t digitCount = 0;
+  for (uint8_t i = 0; buf[i] != '\0'; i++)
+  {
+    char tmp[2] = { buf[i], '\0' };
+    uint8_t charW = d.getStrWidth(tmp);
+
+    if (buf[i] == ':')
+    {
+      digitX += charW;
+      continue;
+    }
+
+    if (digitCount == digit)
+    {
+      underlineW = charW;
+      break;
+    }
+
+    digitX += charW;
+    digitCount++;
+  }
+  d.drawHLine(digitX, y + 2, underlineW);
 
   disp.endFrame();
 }
