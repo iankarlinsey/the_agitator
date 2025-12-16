@@ -87,22 +87,23 @@ void MenuRenderer::drawTimerEditor(uint8_t digit, uint16_t sec)
   uint8_t digitCount = 0;
   for (uint8_t i = 0; buf[i] != '\0'; i++)
   {
-    char tmp[2] = { buf[i], '\0' };
-    uint8_t charW = d.getStrWidth(tmp);
-
     if (buf[i] == ':')
     {
-      digitX += charW;
       continue;
     }
 
     if (digitCount == digit)
     {
-      underlineW = charW;
+      char saved = buf[i];
+      buf[i] = '\0';
+      digitX = x + d.getStrWidth(buf);
+      buf[i] = saved;
+
+      char tmp[2] = { saved, '\0' };
+      underlineW = d.getStrWidth(tmp);
       break;
     }
 
-    digitX += charW;
     digitCount++;
   }
   d.drawHLine(digitX, y + 2, underlineW);

@@ -379,27 +379,27 @@ static const MenuItemDesc MENU_ITEMS[] PROGMEM = {
 
   /* ---- Timer Menu ---- */
   //label          |type             |target             |valueId          |param |
-  { STR_TMR_2M,     MENU_SETTING_OP,  SET_TIMER_SECONDS,  OP_PRESET,         0      }, //22
-  { STR_TMR_5M,     MENU_SETTING_OP,  SET_TIMER_SECONDS,  OP_PRESET,         1      },
-  { STR_TMR_10M,    MENU_SETTING_OP,  SET_TIMER_SECONDS,  OP_PRESET,         2      },
-  { STR_TMR_15M,    MENU_SETTING_OP,  SET_TIMER_SECONDS,  OP_PRESET,         3      },
-  { STR_TMR_20M,    MENU_SETTING_OP,  SET_TIMER_SECONDS,  OP_PRESET,         4      },
-  { STR_CUSTOM,     MENU_SETTING_OP,  SET_TIMER_SECONDS,  OP_ENTER_EDITOR,   0      },
+  { STR_TMR_2M,     MENU_SETTING_OP,  SET_TIMER_SECONDS,  SET_TIMER_SECONDS, 0      }, //22
+  { STR_TMR_5M,     MENU_SETTING_OP,  SET_TIMER_SECONDS,  SET_TIMER_SECONDS, 1      },
+  { STR_TMR_10M,    MENU_SETTING_OP,  SET_TIMER_SECONDS,  SET_TIMER_SECONDS, 2      },
+  { STR_TMR_15M,    MENU_SETTING_OP,  SET_TIMER_SECONDS,  SET_TIMER_SECONDS, 3      },
+  { STR_TMR_20M,    MENU_SETTING_OP,  SET_TIMER_SECONDS,  SET_TIMER_SECONDS, 4      },
+  { STR_CUSTOM,     MENU_SETTING_OP,  SET_TIMER_SECONDS,  SET_TIMER_SECONDS, 0      },
 
   /* ---- Set Speed ---- */
   //label          |type             |target             |valueId          |param |
-  { STR_SPD_80,     MENU_SETTING_OP,  SET_SPEED,          OP_PRESET,         0      }, //28
-  { STR_SPD_120,    MENU_SETTING_OP,  SET_SPEED,          OP_PRESET,         1      },
-  { STR_SPD_160,    MENU_SETTING_OP,  SET_SPEED,          OP_PRESET,         2      },
-  { STR_SPD_200,    MENU_SETTING_OP,  SET_SPEED,          OP_PRESET,         3      },
-  { STR_SPD_240,    MENU_SETTING_OP,  SET_SPEED,          OP_PRESET,         4      },
+  { STR_SPD_80,     MENU_SETTING_OP,  SET_SPEED,          SET_SPEED,         0      }, //28
+  { STR_SPD_120,    MENU_SETTING_OP,  SET_SPEED,          SET_SPEED,         1      },
+  { STR_SPD_160,    MENU_SETTING_OP,  SET_SPEED,          SET_SPEED,         2      },
+  { STR_SPD_200,    MENU_SETTING_OP,  SET_SPEED,          SET_SPEED,         3      },
+  { STR_SPD_240,    MENU_SETTING_OP,  SET_SPEED,          SET_SPEED,         4      },
 
   /* ---- End Dwell ---- */
   //label          |type             |target             |valueId          |param |
-  { STR_DWL_0,      MENU_SETTING_OP,  SET_END_DWELL,      OP_PRESET,         0      }, //33
-  { STR_DWL_100,    MENU_SETTING_OP,  SET_END_DWELL,      OP_PRESET,         1      },
-  { STR_DWL_200,    MENU_SETTING_OP,  SET_END_DWELL,      OP_PRESET,         2      },
-  { STR_DWL_500,    MENU_SETTING_OP,  SET_END_DWELL,      OP_PRESET,         3      },
+  { STR_DWL_0,      MENU_SETTING_OP,  SET_END_DWELL,      SET_END_DWELL,     0      }, //33
+  { STR_DWL_100,    MENU_SETTING_OP,  SET_END_DWELL,      SET_END_DWELL,     1      },
+  { STR_DWL_200,    MENU_SETTING_OP,  SET_END_DWELL,      SET_END_DWELL,     2      },
+  { STR_DWL_500,    MENU_SETTING_OP,  SET_END_DWELL,      SET_END_DWELL,     3      },
 
   /* ---- Acceleration ---- */
   //label          |type             |target             |valueId          |param |
@@ -408,38 +408,38 @@ static const MenuItemDesc MENU_ITEMS[] PROGMEM = {
 
   /* ---- Fwd Speed ---- */
   //label          |type             |target             |valueId          |param |
-  { STR_SPD_120,    MENU_SETTING_OP,  SET_FWD_SPEED,      OP_PRESET,         0      }, //39
-  { STR_SPD_160,    MENU_SETTING_OP,  SET_FWD_SPEED,      OP_PRESET,         1      },
-  { STR_SPD_200,    MENU_SETTING_OP,  SET_FWD_SPEED,      OP_PRESET,         2      },
-  { STR_SPD_240,    MENU_SETTING_OP,  SET_FWD_SPEED,      OP_PRESET,         3      },
+  { STR_SPD_120,    MENU_SETTING_OP,  SET_FWD_SPEED,      SET_FWD_SPEED,     0      }, //39
+  { STR_SPD_160,    MENU_SETTING_OP,  SET_FWD_SPEED,      SET_FWD_SPEED,     1      },
+  { STR_SPD_200,    MENU_SETTING_OP,  SET_FWD_SPEED,      SET_FWD_SPEED,     2      },
+  { STR_SPD_240,    MENU_SETTING_OP,  SET_FWD_SPEED,      SET_FWD_SPEED,     3      },
 
   /* ---- Rev Speed ---- */
   //label          |type             |target             |valueId          |param |
-  { STR_SPD_120,    MENU_SETTING_OP,  SET_REV_SPEED,      OP_PRESET,         0      }, //43
-  { STR_SPD_160,    MENU_SETTING_OP,  SET_REV_SPEED,      OP_PRESET,         1      },
-  { STR_SPD_200,    MENU_SETTING_OP,  SET_REV_SPEED,      OP_PRESET,         2      },
-  { STR_SPD_240,    MENU_SETTING_OP,  SET_REV_SPEED,      OP_PRESET,         3      },
+  { STR_SPD_120,    MENU_SETTING_OP,  SET_REV_SPEED,      SET_REV_SPEED,     0      }, //43
+  { STR_SPD_160,    MENU_SETTING_OP,  SET_REV_SPEED,      SET_REV_SPEED,     1      },
+  { STR_SPD_200,    MENU_SETTING_OP,  SET_REV_SPEED,      SET_REV_SPEED,     2      },
+  { STR_SPD_240,    MENU_SETTING_OP,  SET_REV_SPEED,      SET_REV_SPEED,     3      },
 
   /* ---- Bias ---- */
   //label          |type             |target             |valueId          |param |
-  { STR_BIAS_0,     MENU_SETTING_OP,  SET_BIAS,           OP_PRESET,         0      }, //47
-  { STR_BIAS_1,     MENU_SETTING_OP,  SET_BIAS,           OP_PRESET,         1      },
-  { STR_BIAS_2,     MENU_SETTING_OP,  SET_BIAS,           OP_PRESET,         2      },
-  { STR_BIAS_3,     MENU_SETTING_OP,  SET_BIAS,           OP_PRESET,         3      },
+  { STR_BIAS_0,     MENU_SETTING_OP,  SET_BIAS,           SET_BIAS,          0      }, //47
+  { STR_BIAS_1,     MENU_SETTING_OP,  SET_BIAS,           SET_BIAS,          1      },
+  { STR_BIAS_2,     MENU_SETTING_OP,  SET_BIAS,           SET_BIAS,          2      },
+  { STR_BIAS_3,     MENU_SETTING_OP,  SET_BIAS,           SET_BIAS,          3      },
 
   /* ---- Vib Amp ---- */
   //label          |type             |target             |valueId          |param |
-  { STR_VAMP_1,     MENU_SETTING_OP,  SET_VIB_AMP,        OP_PRESET,         0      }, //51
-  { STR_VAMP_2,     MENU_SETTING_OP,  SET_VIB_AMP,        OP_PRESET,         1      },
-  { STR_VAMP_3,     MENU_SETTING_OP,  SET_VIB_AMP,        OP_PRESET,         2      },
-  { STR_VAMP_4,     MENU_SETTING_OP,  SET_VIB_AMP,        OP_PRESET,         3      },
+  { STR_VAMP_1,     MENU_SETTING_OP,  SET_VIB_AMP,        SET_VIB_AMP,       0      }, //51
+  { STR_VAMP_2,     MENU_SETTING_OP,  SET_VIB_AMP,        SET_VIB_AMP,       1      },
+  { STR_VAMP_3,     MENU_SETTING_OP,  SET_VIB_AMP,        SET_VIB_AMP,       2      },
+  { STR_VAMP_4,     MENU_SETTING_OP,  SET_VIB_AMP,        SET_VIB_AMP,       3      },
 
   /* ---- Vib Freq ---- */
   //label          |type             |target             |valueId          |param |
-  { STR_VFREQ_5,    MENU_SETTING_OP,  SET_VIB_FREQ,       SET_NONE,         0      }, //55
-  { STR_VFREQ_10,   MENU_SETTING_OP,  SET_VIB_FREQ,       SET_NONE,         1      },
-  { STR_VFREQ_20,   MENU_SETTING_OP,  SET_VIB_FREQ,       SET_NONE,         2      },
-  { STR_VFREQ_30,   MENU_SETTING_OP,  SET_VIB_FREQ,       SET_NONE,         3      },
+  { STR_VFREQ_5,    MENU_SETTING_OP,  SET_VIB_FREQ,       SET_VIB_FREQ,      0      }, //55
+  { STR_VFREQ_10,   MENU_SETTING_OP,  SET_VIB_FREQ,       SET_VIB_FREQ,      1      },
+  { STR_VFREQ_20,   MENU_SETTING_OP,  SET_VIB_FREQ,       SET_VIB_FREQ,      2      },
+  { STR_VFREQ_30,   MENU_SETTING_OP,  SET_VIB_FREQ,       SET_VIB_FREQ,      3      },
 
   /* ---- Vib Burst ---- */
   //label          |type             |target             |valueId          |param |
