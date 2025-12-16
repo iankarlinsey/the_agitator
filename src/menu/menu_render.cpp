@@ -6,14 +6,8 @@ MenuRenderer::MenuRenderer(DisplayGME12864 &d)
   : disp(d) {}
 
 
-static uint8_t digitToScreenPos(uint8_t d)
-{
-  // 00:00
-  // 01234
-  static const uint8_t map[4] = { 0, 1, 3, 4 };
-  return map[d];
-}
 
+  
 void MenuRenderer::draw(const MenuEngine &engine) {
   disp.beginFrame();
   drawPage(engine);
@@ -62,28 +56,34 @@ void MenuRenderer::drawPage(const MenuEngine &engine)
   }
 }
 
-void MenuRenderer::drawTimerEditor(uint8_t digit, uint16_t seconds)
+void MenuRenderer::drawTimerEditor(uint8_t digit, uint16_t sec)
 {
   disp.beginFrame();
+
+  // Clear title + body
+  disp.drawTitle("Set Timer");
   disp.clearBody();
 
+  uint8_t mm = sec / 60;
+  uint8_t ss = sec % 60;
+
   char buf[6];
-  uint8_t mm = seconds / 60;
-  uint8_t ss = seconds % 60;
   snprintf(buf, sizeof(buf), "%02u:%02u", mm, ss);
 
-  // draw centered text
-  disp.d.setFont(u8g2_font_6x10_tr);
-  uint8_t w = disp.d.getStrWidth(buf);
-  uint8_t x = (DisplayGME12864::WIDTH - w) / 2;
-  uint8_t y = DisplayGME12864::BODY_Y + 24;
+  // Draw centered text manually
+  U8G2 &d = disp.u8g2();
 
-  disp.d.drawStr(x, y, buf);
+  d.setFont(u8g2_font_6x10_tr);
 
-  // underline selected digit (mapped)
-  uint8_t screenPos = digitToScreenPos(digit);
-  uint8_t ux = x + screenPos * 6;   // 6px per char for this font
-  disp.d.drawHLine(ux, y + 2, 6);
+  uint8_t textW = d.getStrWidth(buf);
+  uint8_t x = (DisplayGME12864::WIDTH - textW) / 2;
+  uint8_t y = DisplayGME12864::BODY_Y + DisplayGME12864::BODY_H / 2 + 4;
+
+  d.drawStr(x, y, buf);
+
+  // Underline selected digit
+  uint8_t digitX = x + d.getStrWidth(buf) * digit / 5;
+  d.drawHLine(digitX, y + 2, d.getStrWidth("0"));
 
   disp.endFrame();
 }
